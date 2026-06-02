@@ -19,14 +19,6 @@ services:
     networks:
       - mynet  # 동일한 네트워크에 연결된 다른 컨테이너들과 통신 가능
 
-  react-app:
-    image: ${DOCKER_USERNAME}/react-app:latest
-    container_name: react_app
-    ports:
-      - "80:80"
-    networks:
-      - mynet
-
 networks:
   mynet:
     external: true  # 이미 생성된 외부 네트워크(mynet 등)를 사용. docker network create mynet 필요
